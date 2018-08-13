@@ -6,6 +6,7 @@
 package edu.usha.bim.sumProj2018.onlineSerRegPayment.controller;
 
 
+import edu.usha.bim.sumProj2018.onlineSerRegPayment.model.JwtToken;
 import edu.usha.bim.sumProj2018.onlineSerRegPayment.model.UserLogin;
 import edu.usha.bim.sumProj2018.onlineSerRegPayment.services.UserRepo;
 import edu.usha.bim.sumProj2018.onlineSerRegPayment.utils.APIConstant;
@@ -29,8 +30,8 @@ public class LoginController {
      @Autowired
      PasswordEncoder passwordEncoder;
     
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(@RequestBody UserLogin userJsonObj) throws ServletException {
+    @RequestMapping(method = RequestMethod.POST)
+    public JwtToken login(@RequestBody UserLogin userJsonObj) throws ServletException {
         if (userJsonObj.getUserName() == null || userJsonObj.getPassword() == null) {
             throw new ServletException("Please fill username or password");
         }
@@ -53,6 +54,9 @@ public class LoginController {
         String jwtToken = Jwts.builder().setSubject(username)
                 .claim("role", userInDb.getRole()).setIssuedAt(new Date())
                 .signWith(SignatureAlgorithm.HS256, "1234").compact();
-        return jwtToken;
+        JwtToken token = new JwtToken();
+        token.setToken("token");
+        token.setValue(jwtToken);
+        return token;
     }
 }

@@ -10,7 +10,7 @@ package edu.usha.bim.sumProj2018.onlineSerRegPayment.utils;
  * @author usha
  */
 public class APIConstant {
-    
+    //usha chaudhary
      public static final String BASE_URL="/municipal";
      public static final String REST="/api";
      public static final String REST_BASE_URL=BASE_URL+REST;
