@@ -26,7 +26,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -45,7 +44,7 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "PropertyTaxPayment.findByDueAmount", query = "SELECT p FROM PropertyTaxPayment p WHERE p.dueAmount = :dueAmount")
     , @NamedQuery(name = "PropertyTaxPayment.findByTotalPaymentAmount", query = "SELECT p FROM PropertyTaxPayment p WHERE p.totalPaymentAmount = :totalPaymentAmount")
     , @NamedQuery(name = "PropertyTaxPayment.findByPaymentDate", query = "SELECT p FROM PropertyTaxPayment p WHERE p.paymentDate = :paymentDate")})
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class,property="propertyTaxPaymentId")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "propertyTaxPaymentId", scope = PropertyTaxPayment.class)
 public class PropertyTaxPayment implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -187,5 +186,5 @@ public class PropertyTaxPayment implements Serializable {
     public String toString() {
         return "edu.usha.bim.sumProj2018.onlineSerRegPayment.model.PropertyTaxPayment[ propertyTaxPaymentId=" + propertyTaxPaymentId + " ]";
     }
-    
+
 }

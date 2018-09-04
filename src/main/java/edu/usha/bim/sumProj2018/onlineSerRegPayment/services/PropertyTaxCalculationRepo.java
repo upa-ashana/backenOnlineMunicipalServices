@@ -8,6 +8,6 @@ package edu.usha.bim.sumProj2018.onlineSerRegPayment.services;
 import edu.usha.bim.sumProj2018.onlineSerRegPayment.model.PropertyTaxCalculation;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface PropertyTaxCalculationRepo extends JpaRepository<PropertyTaxCalculation, Integer>{
-    
+public interface PropertyTaxCalculationRepo extends JpaRepository<PropertyTaxCalculation, Integer> {
+
 }

@@ -13,20 +13,21 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class OnlineSerRegPaymentApplication {
 
     @Bean
-    public FilterRegistrationBean registrationJWTFilter(){
-        final FilterRegistrationBean registrationBean=new FilterRegistrationBean();
-        
-    registrationBean.setFilter(new JWTFilter());
-    registrationBean.addUrlPatterns(APIConstant.REST_BASE_URL+"/*");
-    return registrationBean;
-    
+    public FilterRegistrationBean registrationJWTFilter() {
+        final FilterRegistrationBean registrationBean = new FilterRegistrationBean();
+
+        registrationBean.setFilter(new JWTFilter());
+        registrationBean.addUrlPatterns(APIConstant.REST_BASE_URL + "/*");
+        return registrationBean;
+
     }
+
     @Bean
-    public PasswordEncoder passwordEncoder(){
-    return new BCryptPasswordEncoder();
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
-    
-	public static void main(String[] args) {
-		SpringApplication.run(OnlineSerRegPaymentApplication.class, args);
-	}
+
+    public static void main(String[] args) {
+        SpringApplication.run(OnlineSerRegPaymentApplication.class, args);
+    }
 }

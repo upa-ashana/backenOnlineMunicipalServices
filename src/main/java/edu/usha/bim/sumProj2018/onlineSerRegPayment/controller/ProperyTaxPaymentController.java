@@ -20,24 +20,40 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(APIConstant.PROPERTY_TAX_PAYMENT_URL)
 public class ProperyTaxPaymentController {
+
     @Autowired
     PropertyTaxPaymentRepo taxpayrepo;
-    @RequestMapping(value="/list",method = RequestMethod.GET)
-    public List<PropertyTaxPayment> getAll(){
+
+    /**
+     * this method simply retrieve all the information of PropertyTaxPayment
+     * Table
+     *  list is a type of return which return all the record of database
+     */
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public List<PropertyTaxPayment> getAll() {
         return taxpayrepo.findAll();
-    
+
     }
-    
+
+    /**
+     * this method save the record in database
+     */
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Optional<PropertyTaxPayment> getTaxPayById(@PathVariable Integer id) {
         return taxpayrepo.findById(id);
     }
 
+    /**
+     * update the record of database
+     */
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public PropertyTaxPayment saveTaxPay(@RequestBody PropertyTaxPayment taxpay) {
         return taxpayrepo.save(taxpay);
     }
 
+    /**
+     * delete the record according to id
+     */
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
     public PropertyTaxPayment updateTaxPay(@RequestBody PropertyTaxPayment taxpay) {
         return taxpayrepo.save(taxpay);
@@ -47,5 +63,5 @@ public class ProperyTaxPaymentController {
     public void deletetaxPay(@PathVariable Integer id) {
         taxpayrepo.deleteById(id);
     }
-    
+
 }

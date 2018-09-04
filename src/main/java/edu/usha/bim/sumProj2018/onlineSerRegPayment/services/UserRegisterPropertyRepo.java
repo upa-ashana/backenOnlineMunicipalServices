@@ -12,6 +12,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author usha
  */
-public interface UserRegisterPropertyRepo extends JpaRepository<UserRegisterProperty, Integer>{
-    
+public interface UserRegisterPropertyRepo extends JpaRepository<UserRegisterProperty, Integer> {
+
 }

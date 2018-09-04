@@ -20,29 +20,47 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(APIConstant.USER_PAY_REGISTRATION_FEE_URL)
 public class UserPayRegistrationFeeController {
+
     @Autowired
     UserPayRegistrationFeeRepo payregistfeerepo;
-    @RequestMapping(value = "/list",method = RequestMethod.GET)
-    public List<UserPayRegistrationFee> getAll(){
-    return payregistfeerepo.findAll();
+
+    /**
+     * this method simply retrieve all the information of UserPayRegistrationFee
+     * Table
+     *  list is a type of return which return all the record of database
+     */
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public List<UserPayRegistrationFee> getAll() {
+        return payregistfeerepo.findAll();
     }
-    
-    
-     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+
+    /**
+     * this method simply display information of particular given id
+     */
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Optional<UserPayRegistrationFee> getPayRegistrationFeeById(@PathVariable Integer id) {
         return payregistfeerepo.findById(id);
     }
 
+    /**
+     * this method save the record in database
+     */
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public UserPayRegistrationFee savePayRegistrationFee(@RequestBody UserPayRegistrationFee payregistfee) {
         return payregistfeerepo.save(payregistfee);
     }
 
+    /**
+     * update the record of database
+     */
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
     public UserPayRegistrationFee updatePayRegistrationFee(@RequestBody UserPayRegistrationFee payregistfee) {
         return payregistfeerepo.save(payregistfee);
     }
 
+    /**
+     * delete the record according to id
+     */
     @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
     public void deletePayRegistrationFee(@PathVariable Integer id) {
         payregistfeerepo.deleteById(id);

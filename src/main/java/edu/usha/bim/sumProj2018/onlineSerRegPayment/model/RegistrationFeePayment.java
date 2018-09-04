@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "RegistrationFeePayment.findAll", query = "SELECT r FROM RegistrationFeePayment r")
     , @NamedQuery(name = "RegistrationFeePayment.findByRegistrationFeePaymentId", query = "SELECT r FROM RegistrationFeePayment r WHERE r.registrationFeePaymentId = :registrationFeePaymentId")
     , @NamedQuery(name = "RegistrationFeePayment.findByRegistrationFeeAmount", query = "SELECT r FROM RegistrationFeePayment r WHERE r.registrationFeeAmount = :registrationFeeAmount")})
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class,property="registrationFeePaymentId")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "registrationFeePaymentId")
 public class RegistrationFeePayment implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -112,5 +112,5 @@ public class RegistrationFeePayment implements Serializable {
     public String toString() {
         return "edu.usha.bim.sumProj2018.onlineSerRegPayment.model.RegistrationFeePayment[ registrationFeePaymentId=" + registrationFeePaymentId + " ]";
     }
-    
+
 }

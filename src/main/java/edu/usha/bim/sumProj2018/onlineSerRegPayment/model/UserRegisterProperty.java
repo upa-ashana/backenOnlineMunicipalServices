@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "UserRegisterProperty.findAll", query = "SELECT u FROM UserRegisterProperty u")
     , @NamedQuery(name = "UserRegisterProperty.findByUserRegisterPropertyId", query = "SELECT u FROM UserRegisterProperty u WHERE u.userRegisterPropertyId = :userRegisterPropertyId")})
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class,property="userRegisterPropertyId")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "userRegisterPropertyId", scope = UserRegisterProperty.class)
 public class UserRegisterProperty implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -102,5 +102,5 @@ public class UserRegisterProperty implements Serializable {
     public String toString() {
         return "edu.usha.bim.sumProj2018.onlineSerRegPayment.model.UserRegisterProperty[ userRegisterPropertyId=" + userRegisterPropertyId + " ]";
     }
-    
+
 }

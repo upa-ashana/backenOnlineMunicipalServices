@@ -41,7 +41,7 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "PropertyTaxCalculation.findByTotalPropertyValue", query = "SELECT p FROM PropertyTaxCalculation p WHERE p.totalPropertyValue = :totalPropertyValue")
     , @NamedQuery(name = "PropertyTaxCalculation.findByTaxPercentage", query = "SELECT p FROM PropertyTaxCalculation p WHERE p.taxPercentage = :taxPercentage")
     , @NamedQuery(name = "PropertyTaxCalculation.findByTotalPropertyTax", query = "SELECT p FROM PropertyTaxCalculation p WHERE p.totalPropertyTax = :totalPropertyTax")})
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class,property="propertyTaxCalculationId")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "propertyTaxCalculationId", scope = PropertyTaxCalculation.class)
 public class PropertyTaxCalculation implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -86,12 +86,12 @@ public class PropertyTaxCalculation implements Serializable {
         this.propertyTaxCalculationId = propertyTaxCalculationId;
     }
 
-    public PropertyTaxCalculation(Integer propertyTaxCalculationId, double totalLandValue, double totalHouseValue, double totalPropertyValue, float taxPercentage,double totalPropertyTax) {
+    public PropertyTaxCalculation(Integer propertyTaxCalculationId, double totalLandValue, double totalHouseValue, double totalPropertyValue, float taxPercentage, double totalPropertyTax) {
         this.propertyTaxCalculationId = propertyTaxCalculationId;
         this.totalLandValue = totalLandValue;
         this.totalHouseValue = totalHouseValue;
         this.totalPropertyValue = totalPropertyValue;
-        this.taxPercentage=taxPercentage;
+        this.taxPercentage = taxPercentage;
         this.totalPropertyTax = totalPropertyTax;
     }
 
@@ -126,8 +126,8 @@ public class PropertyTaxCalculation implements Serializable {
     public void setTotalPropertyValue(double totalPropertyValue) {
         this.totalPropertyValue = totalPropertyValue;
     }
-    
-     public float getTaxPercentage() {
+
+    public float getTaxPercentage() {
         return taxPercentage;
     }
 
@@ -192,5 +192,5 @@ public class PropertyTaxCalculation implements Serializable {
     public String toString() {
         return "edu.usha.bim.sumProj2018.onlineSerRegPayment.model.PropertyTaxCalculation[ propertyTaxCalculationId=" + propertyTaxCalculationId + " ]";
     }
-    
+
 }

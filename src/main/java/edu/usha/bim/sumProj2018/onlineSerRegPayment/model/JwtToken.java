@@ -10,8 +10,9 @@ package edu.usha.bim.sumProj2018.onlineSerRegPayment.model;
  * @author usha
  */
 public class JwtToken {
+
     private String token;
-    private String value;
+    private Integer userId;
 
     public String getToken() {
         return token;
@@ -21,14 +22,12 @@ public class JwtToken {
         this.token = token;
     }
 
-    public String getValue() {
-        return value;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
-    
-    
-    
+
 }

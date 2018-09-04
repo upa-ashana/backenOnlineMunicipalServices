@@ -12,6 +12,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author usha
  */
-public interface UserPayRegistrationFeeRepo extends JpaRepository<UserPayRegistrationFee, Integer>{
-    
+public interface UserPayRegistrationFeeRepo extends JpaRepository<UserPayRegistrationFee, Integer> {
+
 }

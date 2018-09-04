@@ -21,7 +21,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -41,7 +40,7 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "HouseInfo.findByHouseArea", query = "SELECT h FROM HouseInfo h WHERE h.houseArea = :houseArea")
     , @NamedQuery(name = "HouseInfo.findByHousePrice", query = "SELECT h FROM HouseInfo h WHERE h.housePrice = :housePrice")
     , @NamedQuery(name = "HouseInfo.findByTotalHouseValue", query = "SELECT h FROM HouseInfo h WHERE h.totalHouseValue = :totalHouseValue")})
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class,property="houseInfoId")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "houseInfoId")
 public class HouseInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -184,5 +183,5 @@ public class HouseInfo implements Serializable {
     public String toString() {
         return "edu.usha.bim.sumProj2018.onlineSerRegPayment.model.HouseInfo[ houseInfoId=" + houseInfoId + " ]";
     }
-    
+
 }

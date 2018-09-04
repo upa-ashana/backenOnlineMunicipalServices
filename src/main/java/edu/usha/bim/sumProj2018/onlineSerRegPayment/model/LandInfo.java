@@ -21,7 +21,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -41,7 +40,7 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "LandInfo.findByLandArea", query = "SELECT l FROM LandInfo l WHERE l.landArea = :landArea")
     , @NamedQuery(name = "LandInfo.findByLandQuality", query = "SELECT l FROM LandInfo l WHERE l.landQuality = :landQuality")
     , @NamedQuery(name = "LandInfo.findByTotalLandValue", query = "SELECT l FROM LandInfo l WHERE l.totalLandValue = :totalLandValue")})
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class,property="landInfoId")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "landInfoId")
 public class LandInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -89,7 +88,7 @@ public class LandInfo implements Serializable {
 
     public LandInfo(Integer landInfoId, String streetName, float noOfAnna, double priceInAana, float landArea, String landQuality, double totalLandValue) {
         this.landInfoId = landInfoId;
-        
+
         this.streetName = streetName;
         this.noOfAnna = noOfAnna;
         this.priceInAana = priceInAana;
@@ -106,7 +105,6 @@ public class LandInfo implements Serializable {
         this.landInfoId = landInfoId;
     }
 
- 
     public String getStreetName() {
         return streetName;
     }
@@ -188,5 +186,5 @@ public class LandInfo implements Serializable {
     public String toString() {
         return "edu.usha.bim.sumProj2018.onlineSerRegPayment.model.LandInfo[ landInfoId=" + landInfoId + " ]";
     }
-    
+
 }

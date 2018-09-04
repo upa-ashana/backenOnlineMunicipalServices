@@ -21,7 +21,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -44,7 +43,7 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "UserLogin.findByRole", query = "SELECT u FROM UserLogin u WHERE u.role = :role")
     , @NamedQuery(name = "UserLogin.findByGender", query = "SELECT u FROM UserLogin u WHERE u.gender = :gender")
     , @NamedQuery(name = "UserLogin.findByPhone", query = "SELECT u FROM UserLogin u WHERE u.phone = :phone")})
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class,property="userId")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "userId", scope = UserLogin.class)
 public class UserLogin implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -65,7 +64,7 @@ public class UserLogin implements Serializable {
     private String password;
     @Basic(optional = false)
     @NotNull
-   // @Size(min = 1, max = 45)
+    // @Size(min = 1, max = 45)
     @Column(name = "first_name", length = 45)
     private String firstName;
     @Basic(optional = false)
@@ -77,7 +76,7 @@ public class UserLogin implements Serializable {
     @Column(name = "address", length = 45)
     private String address;
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
-   // @Size(max = 45)
+    // @Size(max = 45)
     @Column(name = "email", length = 45)
     private String email;
     @Basic(optional = false)
@@ -260,5 +259,5 @@ public class UserLogin implements Serializable {
     public String toString() {
         return "edu.usha.bim.sumProj2018.onlineSerRegPayment.model.UserLogin[ userId=" + userId + " ]";
     }
-    
+
 }

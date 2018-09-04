@@ -5,11 +5,9 @@
  */
 package edu.usha.bim.sumProj2018.onlineSerRegPayment.services;
 
-
 import edu.usha.bim.sumProj2018.onlineSerRegPayment.model.PropertyRegistration;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+public interface PropertyRegistrationRepo extends JpaRepository<PropertyRegistration, Integer> {
 
-public interface PropertyRegistrationRepo extends JpaRepository<PropertyRegistration, Integer>{
-    
-} 
+}

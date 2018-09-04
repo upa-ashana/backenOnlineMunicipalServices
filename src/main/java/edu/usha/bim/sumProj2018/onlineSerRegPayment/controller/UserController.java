@@ -21,45 +21,58 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @RestController
 @RequestMapping(APIConstant.USER_URL)
 public class UserController {
+
     @Autowired
     UserRepo userrepo;
-    
+
     @Autowired
     PasswordEncoder passwordEncoder;
-    
-  @RequestMapping(value="/list", method =RequestMethod.GET )
-  public List<UserLogin> getAll(){
-       return userrepo.findAll();
-   
-   }
-  
-  @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+
+    /**
+     * this method simply retrieve all the information of UserLogin Table
+     *  list is a type of return which return all the record of database
+     */
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public List<UserLogin> getAll() {
+        return userrepo.findAll();
+
+    }
+
+    /**
+     * this method simply display information of particular given id
+     */
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Optional<UserLogin> getUserById(@PathVariable Integer id) {
         return userrepo.findById(id);
     }
 
+    /**
+     * this method save the record in database
+     */
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public UserLogin saveUser(@RequestBody UserLogin user) {
-       String password=user.getPassword();
-       if(password!=null||!password.isEmpty()){
-       user.setPassword(passwordEncoder.encode(password));
-       }        
+        String password = user.getPassword();
+        if (password != null || !password.isEmpty()) {
+            user.setPassword(passwordEncoder.encode(password));
+        }
         return userrepo.save(user);
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
     public UserLogin updateUser(@RequestBody UserLogin user) {
-         String password=user.getPassword();
-       if(password!=null||!password.isEmpty()){
-       user.setPassword(passwordEncoder.encode(password));
-       }
+        String password = user.getPassword();
+        if (password != null || !password.isEmpty()) {
+            user.setPassword(passwordEncoder.encode(password));
+        }
         return userrepo.save(user);
     }
 
+    /**
+     * delete the record according to id
+     */
     @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
     public void deleteUser(@PathVariable Integer id) {
         userrepo.deleteById(id);
     }
-  
-    
+
 }

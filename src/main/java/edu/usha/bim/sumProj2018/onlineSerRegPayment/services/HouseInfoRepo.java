@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,7 +9,6 @@ package edu.usha.bim.sumProj2018.onlineSerRegPayment.services;
 import edu.usha.bim.sumProj2018.onlineSerRegPayment.model.HouseInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+public interface HouseInfoRepo extends JpaRepository<HouseInfo, Integer> {
 
-public interface HouseInfoRepo extends JpaRepository<HouseInfo, Integer>{
-    
 }

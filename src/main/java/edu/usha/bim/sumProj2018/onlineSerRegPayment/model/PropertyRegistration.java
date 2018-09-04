@@ -25,7 +25,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -54,7 +53,7 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "PropertyRegistration.findByStreetName", query = "SELECT p FROM PropertyRegistration p WHERE p.streetName = :streetName")
     , @NamedQuery(name = "PropertyRegistration.findByRegisterDate", query = "SELECT p FROM PropertyRegistration p WHERE p.registerDate = :registerDate")
     , @NamedQuery(name = "PropertyRegistration.findByRegistrationFee", query = "SELECT p FROM PropertyRegistration p WHERE p.registrationFee = :registrationFee")})
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class,property="propertyRegistrationId")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "propertyRegistrationId")
 public class PropertyRegistration implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -64,19 +63,19 @@ public class PropertyRegistration implements Serializable {
     @Column(name = "property_registration_id")
     private Integer propertyRegistrationId;
     @Basic(optional = false)
-    @NotNull  
+    @NotNull
     @Column(name = "owner_name", length = 45)
     private String ownerName;
     @Basic(optional = false)
-    @NotNull  
+    @NotNull
     @Column(name = "citizon_no", length = 45)
     private String citizonNo;
     @Basic(optional = false)
-    @NotNull    
+    @NotNull
     @Column(name = "phone_no", length = 45)
     private String phoneNo;
     @Basic(optional = false)
-    @NotNull   
+    @NotNull
     @Column(name = "region", length = 45)
     private String region;
     @Basic(optional = false)
@@ -112,7 +111,7 @@ public class PropertyRegistration implements Serializable {
     @Column(name = "no_of_anna")
     private float noOfAnna;
     @Basic(optional = false)
-    @NotNull    
+    @NotNull
     @Column(name = "street_name", length = 45)
     private String streetName;
     @Basic(optional = false)
@@ -126,12 +125,12 @@ public class PropertyRegistration implements Serializable {
     private float registrationFee;
     @Basic(optional = false)
     @NotNull
-    @Lob   
+    @Lob
     @Column(name = "owner_signature", length = 2147483647)
     private String ownerSignature;
     @Basic(optional = false)
     @NotNull
-    @Lob   
+    @Lob
     @Column(name = "wardsachib_signature", length = 2147483647)
     private String wardsachibSignature;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "propertyRegistrationId")
@@ -342,5 +341,5 @@ public class PropertyRegistration implements Serializable {
     public String toString() {
         return "edu.usha.bim.sumProj2018.onlineSerRegPayment.model.PropertyRegistration[ propertyRegistrationId=" + propertyRegistrationId + " ]";
     }
-    
+
 }

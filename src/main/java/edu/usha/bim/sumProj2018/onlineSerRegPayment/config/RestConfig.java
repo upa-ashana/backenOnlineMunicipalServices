@@ -1,4 +1,3 @@
-
 package edu.usha.bim.sumProj2018.onlineSerRegPayment.config;
 
 import org.springframework.context.annotation.Bean;

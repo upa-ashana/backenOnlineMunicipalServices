@@ -8,7 +8,6 @@ package edu.usha.bim.sumProj2018.onlineSerRegPayment.services;
 import edu.usha.bim.sumProj2018.onlineSerRegPayment.model.LandInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+public interface LandInfoRepo extends JpaRepository<LandInfo, Integer> {
 
-public interface LandInfoRepo extends JpaRepository<LandInfo, Integer>{
-    
 }

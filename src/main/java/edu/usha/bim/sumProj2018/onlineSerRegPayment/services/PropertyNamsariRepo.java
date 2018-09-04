@@ -5,11 +5,9 @@
  */
 package edu.usha.bim.sumProj2018.onlineSerRegPayment.services;
 
-
 import edu.usha.bim.sumProj2018.onlineSerRegPayment.model.PropertyNamsari;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+public interface PropertyNamsariRepo extends JpaRepository<PropertyNamsari, Integer> {
 
-public interface PropertyNamsariRepo extends JpaRepository<PropertyNamsari, Integer>{
-    
 }

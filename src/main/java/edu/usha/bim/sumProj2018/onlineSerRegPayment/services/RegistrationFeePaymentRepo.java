@@ -8,6 +8,6 @@ package edu.usha.bim.sumProj2018.onlineSerRegPayment.services;
 import edu.usha.bim.sumProj2018.onlineSerRegPayment.model.RegistrationFeePayment;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface RegistrationFeePaymentRepo extends JpaRepository<RegistrationFeePayment, Integer>{
-    
+public interface RegistrationFeePaymentRepo extends JpaRepository<RegistrationFeePayment, Integer> {
+
 }

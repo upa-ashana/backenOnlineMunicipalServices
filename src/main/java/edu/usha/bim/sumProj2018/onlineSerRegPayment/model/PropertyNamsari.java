@@ -25,7 +25,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -38,10 +37,10 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "PropertyNamsari.findAll", query = "SELECT p FROM PropertyNamsari p")
-    , @NamedQuery(name = "PropertyNamsari.findByProperytNamsariId", query = "SELECT p FROM PropertyNamsari p WHERE p.properytNamsariId = :properytNamsariId")
+    , @NamedQuery(name = "PropertyNamsari.findByPropertyNamsariId", query = "SELECT p FROM PropertyNamsari p WHERE p.propertyNamsariId = :propertyNamsariId")
     , @NamedQuery(name = "PropertyNamsari.findByGiverName", query = "SELECT p FROM PropertyNamsari p WHERE p.giverName = :giverName")
     , @NamedQuery(name = "PropertyNamsari.findByGiverMobileNo", query = "SELECT p FROM PropertyNamsari p WHERE p.giverMobileNo = :giverMobileNo")
-    , @NamedQuery(name = "PropertyNamsari.findByGiverCitizonNo", query = "SELECT p FROM PropertyNamsari p WHERE p.giverCitizonNo = :giverCitizonNo")
+    , @NamedQuery(name = "PropertyNamsari.findByGiverCitizenNo", query = "SELECT p FROM PropertyNamsari p WHERE p.giverCitizenNo = :giverCitizenNo")
     , @NamedQuery(name = "PropertyNamsari.findByGiverRegion", query = "SELECT p FROM PropertyNamsari p WHERE p.giverRegion = :giverRegion")
     , @NamedQuery(name = "PropertyNamsari.findByGiverWardNo", query = "SELECT p FROM PropertyNamsari p WHERE p.giverWardNo = :giverWardNo")
     , @NamedQuery(name = "PropertyNamsari.findByTakerName", query = "SELECT p FROM PropertyNamsari p WHERE p.takerName = :takerName")
@@ -55,17 +54,16 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "PropertyNamsari.findByLandArea", query = "SELECT p FROM PropertyNamsari p WHERE p.landArea = :landArea")
     , @NamedQuery(name = "PropertyNamsari.findByNoOfAnna", query = "SELECT p FROM PropertyNamsari p WHERE p.noOfAnna = :noOfAnna")
     , @NamedQuery(name = "PropertyNamsari.findByDate", query = "SELECT p FROM PropertyNamsari p WHERE p.date = :date")
-    , @NamedQuery(name = "PropertyNamsari.findByNamsariFee", query = "SELECT p FROM PropertyNamsari p WHERE p.namsariFee = :namsariFee")
-    , @NamedQuery(name = "PropertyNamsari.findByWritingType", query = "SELECT p FROM PropertyNamsari p WHERE p.writingType = :writingType")})
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class,property="properytNamsariId")
+    , @NamedQuery(name = "PropertyNamsari.findByTransferFee", query = "SELECT p FROM PropertyNamsari p WHERE p.transferFee = :transferFee")})
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "propertyNamsariId")
 public class PropertyNamsari implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "properyt_namsari_id")
-    private Integer properytNamsariId;
+    @Column(name = "property_namsari_id")
+    private Integer propertyNamsariId;
     @Basic(optional = false)
     @NotNull
     //@Size(min = 1, max = 45)
@@ -79,8 +77,8 @@ public class PropertyNamsari implements Serializable {
     @Basic(optional = false)
     @NotNull
     //@Size(min = 1, max = 45)
-    @Column(name = "giver_citizon_no", length = 45)
-    private String giverCitizonNo;
+    @Column(name = "giver_citizen_no", length = 45)
+    private String giverCitizenNo;
     @Basic(optional = false)
     @NotNull
     //@Size(min = 1, max = 45)
@@ -154,17 +152,17 @@ public class PropertyNamsari implements Serializable {
     private Date date;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "namsari_fee")
-    private float namsariFee;
+    @Column(name = "transfer_fee")
+    private float transferFee;
     @Basic(optional = false)
     @NotNull
     //@Size(min = 1, max = 45)
-    @Column(name = "writing_type", length = 45)
-    private String writingType;
-    @Basic(optional = false)
+//    @Column(name = "writing_type", length = 45)
+//    private String writingType;
+//    @Basic(optional = false)
     @NotNull
     @Lob
-   // @Size(min = 1, max = 2147483647)
+    //@Size(min = 1, max = 2147483647)
     @Column(name = "wardsachib_signature", length = 2147483647)
     private String wardsachibSignature;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "propertyNamsariId")
@@ -173,15 +171,15 @@ public class PropertyNamsari implements Serializable {
     public PropertyNamsari() {
     }
 
-    public PropertyNamsari(Integer properytNamsariId) {
-        this.properytNamsariId = properytNamsariId;
+    public PropertyNamsari(Integer propertyNamsariId) {
+        this.propertyNamsariId = propertyNamsariId;
     }
 
-    public PropertyNamsari(Integer properytNamsariId, String giverName, String giverMobileNo, String giverCitizonNo, String giverRegion, int giverWardNo, String giverSignature, String takerName, String takerMobileNo, String takerCitizenNo, String takerRegion, int takerWardNo, String takerSignature, int kittaNo, String houseNo, float houseArea, float landArea, float noOfAnna, Date date, float namsariFee, String writingType, String wardsachibSignature) {
-        this.properytNamsariId = properytNamsariId;
+    public PropertyNamsari(Integer properytNamsariId, String giverName, String giverMobileNo, String giverCitizenNo, String giverRegion, int giverWardNo, String giverSignature, String takerName, String takerMobileNo, String takerCitizenNo, String takerRegion, int takerWardNo, String takerSignature, int kittaNo, String houseNo, float houseArea, float landArea, float noOfAnna, Date date, float transferFee, String wardsachibSignature) {
+        this.propertyNamsariId = properytNamsariId;
         this.giverName = giverName;
         this.giverMobileNo = giverMobileNo;
-        this.giverCitizonNo = giverCitizonNo;
+        this.giverCitizenNo = giverCitizenNo;
         this.giverRegion = giverRegion;
         this.giverWardNo = giverWardNo;
         this.giverSignature = giverSignature;
@@ -197,17 +195,16 @@ public class PropertyNamsari implements Serializable {
         this.landArea = landArea;
         this.noOfAnna = noOfAnna;
         this.date = date;
-        this.namsariFee = namsariFee;
-        this.writingType = writingType;
+        this.transferFee = transferFee;
         this.wardsachibSignature = wardsachibSignature;
     }
 
     public Integer getProperytNamsariId() {
-        return properytNamsariId;
+        return propertyNamsariId;
     }
 
     public void setProperytNamsariId(Integer properytNamsariId) {
-        this.properytNamsariId = properytNamsariId;
+        this.propertyNamsariId = properytNamsariId;
     }
 
     public String getGiverName() {
@@ -226,12 +223,12 @@ public class PropertyNamsari implements Serializable {
         this.giverMobileNo = giverMobileNo;
     }
 
-    public String getGiverCitizonNo() {
-        return giverCitizonNo;
+    public String getGiverCitizenNo() {
+        return giverCitizenNo;
     }
 
     public void setGiverCitizonNo(String giverCitizonNo) {
-        this.giverCitizonNo = giverCitizonNo;
+        this.giverCitizenNo = giverCitizonNo;
     }
 
     public String getGiverRegion() {
@@ -354,23 +351,15 @@ public class PropertyNamsari implements Serializable {
         this.date = date;
     }
 
-    public float getNamsariFee() {
-        return namsariFee;
+    public float getTransferFee() {
+        return transferFee;
     }
 
-    public void setNamsariFee(float namsariFee) {
-        this.namsariFee = namsariFee;
+    public void setTransferFee(float transferFee) {
+        this.transferFee = transferFee;
     }
 
-    public String getWritingType() {
-        return writingType;
-    }
-
-    public void setWritingType(String writingType) {
-        this.writingType = writingType;
-    }
-
-    public String getWardsachibSignature() {
+    public String getWardSachibSignature() {
         return wardsachibSignature;
     }
 
@@ -390,7 +379,7 @@ public class PropertyNamsari implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (properytNamsariId != null ? properytNamsariId.hashCode() : 0);
+        hash += (propertyNamsariId != null ? propertyNamsariId.hashCode() : 0);
         return hash;
     }
 
@@ -401,7 +390,7 @@ public class PropertyNamsari implements Serializable {
             return false;
         }
         PropertyNamsari other = (PropertyNamsari) object;
-        if ((this.properytNamsariId == null && other.properytNamsariId != null) || (this.properytNamsariId != null && !this.properytNamsariId.equals(other.properytNamsariId))) {
+        if ((this.propertyNamsariId == null && other.propertyNamsariId != null) || (this.propertyNamsariId != null && !this.propertyNamsariId.equals(other.propertyNamsariId))) {
             return false;
         }
         return true;
@@ -409,7 +398,7 @@ public class PropertyNamsari implements Serializable {
 
     @Override
     public String toString() {
-        return "edu.usha.bim.sumProj2018.onlineSerRegPayment.model.PropertyNamsari[ properytNamsariId=" + properytNamsariId + " ]";
+        return "edu.usha.bim.sumProj2018.onlineSerRegPayment.model.PropertyNamsari[ propertyNamsariId=" + this.propertyNamsariId + " ]";
     }
-    
+
 }

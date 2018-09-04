@@ -12,6 +12,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author usha
  */
-public interface UserDoNamsariRepo extends JpaRepository<UserDoNamsari, Integer>{
-    
+public interface UserDoNamsariRepo extends JpaRepository<UserDoNamsari, Integer> {
+
 }
