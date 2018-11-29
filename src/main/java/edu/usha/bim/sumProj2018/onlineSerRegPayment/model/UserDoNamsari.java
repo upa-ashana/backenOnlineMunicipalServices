@@ -50,9 +50,9 @@ public class UserDoNamsari implements Serializable {
     public UserDoNamsari() {
     }
 
-    public UserDoNamsari(Integer userDoNamsariId) {
-        this.userDoNamsariId = userDoNamsariId;
-    }
+//    public UserDoNamsari(Integer userDoNamsariId) {
+//        this.userDoNamsariId = userDoNamsariId;
+//    }
 
     public Integer getUserDoNamsariId() {
         return userDoNamsariId;

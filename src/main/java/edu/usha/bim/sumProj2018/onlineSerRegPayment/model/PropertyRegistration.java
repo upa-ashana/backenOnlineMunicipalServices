@@ -24,7 +24,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -63,73 +62,73 @@ public class PropertyRegistration implements Serializable {
     @Column(name = "property_registration_id")
     private Integer propertyRegistrationId;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "owner_name", length = 45)
     private String ownerName;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "citizon_no", length = 45)
     private String citizonNo;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "phone_no", length = 45)
     private String phoneNo;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "region", length = 45)
     private String region;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "ward_no")
     private int wardNo;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "kitta_no")
     private int kittaNo;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "house_no")
     private int houseNo;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "no_of_room")
     private int noOfRoom;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "no_of_flat")
     private int noOfFlat;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "house_area")
     private float houseArea;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "land_area")
     private float landArea;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "no_of_anna")
     private float noOfAnna;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "street_name", length = 45)
     private String streetName;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "register_date")
     @Temporal(TemporalType.DATE)
     private Date registerDate;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "registration_fee")
     private float registrationFee;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Lob
     @Column(name = "owner_signature", length = 2147483647)
     private String ownerSignature;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Lob
     @Column(name = "wardsachib_signature", length = 2147483647)
     private String wardsachibSignature;

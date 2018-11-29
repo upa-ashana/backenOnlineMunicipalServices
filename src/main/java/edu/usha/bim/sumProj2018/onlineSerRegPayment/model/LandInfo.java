@@ -51,29 +51,29 @@ public class LandInfo implements Serializable {
     private Integer landInfoId;
 
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     //@Size(min = 1, max = 45)
     @Column(name = "street_name", length = 45)
     private String streetName;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "no_of_anna")
     private float noOfAnna;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "price_in_aana")
     private double priceInAana;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "land_area")
     private float landArea;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     //@Size(min = 1, max = 45)
     @Column(name = "land_quality", length = 45)
     private String landQuality;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "total_land_value")
     private double totalLandValue;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "landInfoId")

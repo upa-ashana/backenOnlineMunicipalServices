@@ -47,7 +47,7 @@ public class PropertyRegistrationController {
     /**
      * this method save the record in database
      */
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    @RequestMapping(value = "/save", method = RequestMethod.POST, consumes="application/json;charset=UTF-8")
     public PropertyRegistration saveRegistration(@RequestBody PropertyRegistration registration) {
         return registrationrepo.save(registration);
     }

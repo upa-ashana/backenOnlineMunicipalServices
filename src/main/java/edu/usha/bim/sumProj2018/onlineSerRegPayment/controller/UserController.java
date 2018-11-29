@@ -48,8 +48,10 @@ public class UserController {
 
     /**
      * this method save the record in database
+     * @param user
+     * @return user
      */
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    @RequestMapping(value = "/save", method = RequestMethod.POST, consumes="application/json;charset=UTF-8")
     public UserLogin saveUser(@RequestBody UserLogin user) {
         String password = user.getPassword();
         if (password != null || !password.isEmpty()) {

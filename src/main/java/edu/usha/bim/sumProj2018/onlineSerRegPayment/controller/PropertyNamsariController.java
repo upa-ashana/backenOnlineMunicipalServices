@@ -40,7 +40,7 @@ public class PropertyNamsariController {
     /**
      * this method save the record in database
      */
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    @RequestMapping(value = "/save", method = RequestMethod.POST, consumes="application/json;charset=UTF-8")
     public PropertyNamsari saveNamsari(@RequestBody PropertyNamsari namsari) {
         return namsarirepo.save(namsari);
     }

@@ -6,6 +6,7 @@
 package edu.usha.bim.sumProj2018.onlineSerRegPayment.model;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import java.io.Serializable;
 import java.util.List;
@@ -20,7 +21,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -53,22 +53,22 @@ public class UserLogin implements Serializable {
     @Column(name = "user_id")
     private Integer userId;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     //@Size(min = 1, max = 45)
     @Column(name = "user_name", length = 45)
     private String userName;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     //@Size(min = 1, max = 45)
     @Column(name = "password")
     private String password;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     // @Size(min = 1, max = 45)
     @Column(name = "first_name", length = 45)
     private String firstName;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     //@Size(min = 1, max = 45)
     @Column(name = "last_name", length = 45)
     private String lastName;
@@ -80,12 +80,12 @@ public class UserLogin implements Serializable {
     @Column(name = "email", length = 45)
     private String email;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     //@Size(min = 1, max = 6)
     @Column(name = "role", length = 6)
     private String role;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     //@Size(min = 1, max = 2)
     @Column(name = "gender", length = 2)
     private String gender;
@@ -97,6 +97,7 @@ public class UserLogin implements Serializable {
     private List<UserRegisterProperty> userRegisterPropertyList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")
     private List<UserPayTax> userPayTaxList;
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")
     private List<UserDoNamsari> userDoNamsariList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")

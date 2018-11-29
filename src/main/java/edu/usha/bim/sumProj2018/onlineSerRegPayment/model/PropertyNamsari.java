@@ -24,7 +24,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -65,102 +64,101 @@ public class PropertyNamsari implements Serializable {
     @Column(name = "property_namsari_id")
     private Integer propertyNamsariId;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     //@Size(min = 1, max = 45)
     @Column(name = "giver_name", length = 45)
     private String giverName;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     //@Size(min = 1, max = 45)
     @Column(name = "giver_mobile_no", length = 45)
     private String giverMobileNo;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     //@Size(min = 1, max = 45)
     @Column(name = "giver_citizen_no", length = 45)
     private String giverCitizenNo;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     //@Size(min = 1, max = 45)
     @Column(name = "giver_region", length = 45)
     private String giverRegion;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     @Column(name = "giver_ward_no")
     private int giverWardNo;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     @Lob
     //@Size(min = 1, max = 2147483647)
     @Column(name = "giver_signature", length = 2147483647)
     private String giverSignature;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     //@Size(min = 1, max = 45)
     @Column(name = "taker_name", length = 45)
     private String takerName;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     //@Size(min = 1, max = 45)
     @Column(name = "taker_mobile_no", length = 45)
     private String takerMobileNo;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     //@Size(min = 1, max = 45)
     @Column(name = "taker_citizen_no", length = 45)
     private String takerCitizenNo;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     //@Size(min = 1, max = 45)
     @Column(name = "taker_region", length = 45)
     private String takerRegion;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     @Column(name = "taker_ward_no")
     private int takerWardNo;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     @Lob
     //@Size(min = 1, max = 2147483647)
     @Column(name = "taker_signature", length = 2147483647)
     private String takerSignature;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     @Column(name = "kitta_no")
     private int kittaNo;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     //@Size(min = 1, max = 45)
     @Column(name = "house_no", length = 45)
     private String houseNo;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     @Column(name = "house_area")
     private float houseArea;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     @Column(name = "land_area")
     private float landArea;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     @Column(name = "no_of_anna")
     private float noOfAnna;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     @Column(name = "date")
     @Temporal(TemporalType.DATE)
     private Date date;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     @Column(name = "transfer_fee")
     private float transferFee;
     @Basic(optional = false)
-    @NotNull
     //@Size(min = 1, max = 45)
 //    @Column(name = "writing_type", length = 45)
 //    private String writingType;
 //    @Basic(optional = false)
-    @NotNull
+//    @NotNull
     @Lob
     //@Size(min = 1, max = 2147483647)
     @Column(name = "wardsachib_signature", length = 2147483647)
@@ -171,33 +169,59 @@ public class PropertyNamsari implements Serializable {
     public PropertyNamsari() {
     }
 
-    public PropertyNamsari(Integer propertyNamsariId) {
-        this.propertyNamsariId = propertyNamsariId;
-    }
-
-    public PropertyNamsari(Integer properytNamsariId, String giverName, String giverMobileNo, String giverCitizenNo, String giverRegion, int giverWardNo, String giverSignature, String takerName, String takerMobileNo, String takerCitizenNo, String takerRegion, int takerWardNo, String takerSignature, int kittaNo, String houseNo, float houseArea, float landArea, float noOfAnna, Date date, float transferFee, String wardsachibSignature) {
-        this.propertyNamsariId = properytNamsariId;
-        this.giverName = giverName;
-        this.giverMobileNo = giverMobileNo;
-        this.giverCitizenNo = giverCitizenNo;
-        this.giverRegion = giverRegion;
-        this.giverWardNo = giverWardNo;
-        this.giverSignature = giverSignature;
-        this.takerName = takerName;
-        this.takerMobileNo = takerMobileNo;
-        this.takerCitizenNo = takerCitizenNo;
-        this.takerRegion = takerRegion;
-        this.takerWardNo = takerWardNo;
-        this.takerSignature = takerSignature;
-        this.kittaNo = kittaNo;
-        this.houseNo = houseNo;
-        this.houseArea = houseArea;
-        this.landArea = landArea;
-        this.noOfAnna = noOfAnna;
-        this.date = date;
-        this.transferFee = transferFee;
-        this.wardsachibSignature = wardsachibSignature;
-    }
+//    public PropertyNamsari(Integer propertyNamsariId) {
+//        this.propertyNamsariId = propertyNamsariId;
+//    }
+//
+//    public PropertyNamsari(Integer properytNamsariId, String giverName, String giverMobileNo, String giverCitizenNo, String giverRegion, int giverWardNo, String giverSignature, String takerName, String takerMobileNo, String takerCitizenNo, String takerRegion, int takerWardNo, String takerSignature, int kittaNo, String houseNo, float houseArea, float landArea, float noOfAnna, Date date, float transferFee, String wardsachibSignature) {
+//        this.propertyNamsariId = properytNamsariId;
+//        this.giverName = giverName;
+//        this.giverMobileNo = giverMobileNo;
+//        this.giverCitizenNo = giverCitizenNo;
+//        this.giverRegion = giverRegion;
+//        this.giverWardNo = giverWardNo;
+//        this.giverSignature = giverSignature;
+//        this.takerName = takerName;
+//        this.takerMobileNo = takerMobileNo;
+//        this.takerCitizenNo = takerCitizenNo;
+//        this.takerRegion = takerRegion;
+//        this.takerWardNo = takerWardNo;
+//        this.takerSignature = takerSignature;
+//        this.kittaNo = kittaNo;
+//        this.houseNo = houseNo;
+//        this.houseArea = houseArea;
+//        this.landArea = landArea;
+//        this.noOfAnna = noOfAnna;
+//        this.date = date;
+//        this.transferFee = transferFee;
+//        this.wardsachibSignature = wardsachibSignature;
+//    }public PropertyNamsari(Integer propertyNamsariId) {
+//        this.propertyNamsariId = propertyNamsariId;
+//    }
+//
+//    public PropertyNamsari(Integer properytNamsariId, String giverName, String giverMobileNo, String giverCitizenNo, String giverRegion, int giverWardNo, String giverSignature, String takerName, String takerMobileNo, String takerCitizenNo, String takerRegion, int takerWardNo, String takerSignature, int kittaNo, String houseNo, float houseArea, float landArea, float noOfAnna, Date date, float transferFee, String wardsachibSignature) {
+//        this.propertyNamsariId = properytNamsariId;
+//        this.giverName = giverName;
+//        this.giverMobileNo = giverMobileNo;
+//        this.giverCitizenNo = giverCitizenNo;
+//        this.giverRegion = giverRegion;
+//        this.giverWardNo = giverWardNo;
+//        this.giverSignature = giverSignature;
+//        this.takerName = takerName;
+//        this.takerMobileNo = takerMobileNo;
+//        this.takerCitizenNo = takerCitizenNo;
+//        this.takerRegion = takerRegion;
+//        this.takerWardNo = takerWardNo;
+//        this.takerSignature = takerSignature;
+//        this.kittaNo = kittaNo;
+//        this.houseNo = houseNo;
+//        this.houseArea = houseArea;
+//        this.landArea = landArea;
+//        this.noOfAnna = noOfAnna;
+//        this.date = date;
+//        this.transferFee = transferFee;
+//        this.wardsachibSignature = wardsachibSignature;
+//    }
 
     public Integer getProperytNamsariId() {
         return propertyNamsariId;

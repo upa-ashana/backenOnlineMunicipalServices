@@ -50,28 +50,28 @@ public class HouseInfo implements Serializable {
     @Column(name = "house_info_id")
     private Integer houseInfoId;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "house_no")
     private int houseNo;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "ward_no")
     private int wardNo;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     //@Size(min = 1, max = 45)
     @Column(name = "street_name", length = 45)
     private String streetName;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "house_area")
     private float houseArea;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "house_price")
     private double housePrice;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "total_house_value")
     private double totalHouseValue;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "houseInfoId")

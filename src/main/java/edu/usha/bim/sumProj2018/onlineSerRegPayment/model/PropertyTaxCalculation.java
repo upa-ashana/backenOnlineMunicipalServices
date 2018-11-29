@@ -22,7 +22,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -51,23 +50,23 @@ public class PropertyTaxCalculation implements Serializable {
     @Column(name = "property_tax_calculation_id")
     private Integer propertyTaxCalculationId;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "total_land_value")
     private double totalLandValue;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "total_house_value")
     private double totalHouseValue;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "total_property_value")
     private double totalPropertyValue;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "tax_percentage")
     private float taxPercentage;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "total_property_tax")
     private double totalPropertyTax;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "propertyTaxCalculationId")

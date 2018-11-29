@@ -25,7 +25,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -54,24 +53,24 @@ public class PropertyTaxPayment implements Serializable {
     @Column(name = "property_tax_payment_id")
     private Integer propertyTaxPaymentId;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     //@Size(min = 1, max = 45)
     @Column(name = "payment_type", length = 45)
     private String paymentType;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "current_year_amount")
     private double currentYearAmount;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "due_amount")
     private double dueAmount;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "total_payment_amount")
     private double totalPaymentAmount;
     @Basic(optional = false)
-    @NotNull
+    // @NotNull
     @Column(name = "payment_date")
     @Temporal(TemporalType.DATE)
     private Date paymentDate;
