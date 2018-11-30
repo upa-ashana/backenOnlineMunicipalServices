@@ -31,34 +31,22 @@ public class HouseInfoController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    /**
-     * this method simply display information of particular given id
-     */
-    public Optional<HouseInfo> getHouseById(@PathVariable Integer id) {
+        public Optional<HouseInfo> getHouseById(@PathVariable Integer id) {
         return houseinforepo.findById(id);
     }
-
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
-    /**
-     * this method save the record in database
-     */
-    public HouseInfo saveHuse(@RequestBody HouseInfo house) {
+        
+    @RequestMapping(value = "/save", method = RequestMethod.POST, consumes="application/json;charset=UTF-8")
+        public HouseInfo saveHuse(@RequestBody HouseInfo house) {
         return houseinforepo.save(house);
     }
 
-    @RequestMapping(value = "/update", method = RequestMethod.PUT)
-    /**
-     * update the record of database
-     */
-    public HouseInfo updateHouse(@RequestBody HouseInfo house) {
+    @RequestMapping(value = "/update", method = RequestMethod.PUT)      
+       public HouseInfo updateHouse(@RequestBody HouseInfo house) {
         return houseinforepo.save(house);
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
-    /**
-     * delete the record according to id
-     */
-    public void deleteHouse(@PathVariable Integer id) {
+        public void deleteHouse(@PathVariable Integer id) {
         houseinforepo.deleteById(id);
     }
 

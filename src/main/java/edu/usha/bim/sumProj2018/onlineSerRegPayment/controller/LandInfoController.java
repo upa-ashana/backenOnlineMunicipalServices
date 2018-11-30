@@ -40,7 +40,7 @@ public class LandInfoController {
     /**
      * this method save the record in database
      */
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    @RequestMapping(value = "/save", method = RequestMethod.POST, consumes="application/json;charset=UTF-8")
     public LandInfo saveLand(@RequestBody LandInfo land) {
         return landinforepo.save(land);
     }
@@ -48,7 +48,7 @@ public class LandInfoController {
     /**
      * update the record of database
      */
-    @RequestMapping(value = "/update", method = RequestMethod.PUT)
+    @RequestMapping(value = "/update", method = RequestMethod.PUT, consumes="application/json;charset=UTF-8")
     public LandInfo updateLand(@RequestBody LandInfo land) {
         return landinforepo.save(land);
     }

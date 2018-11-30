@@ -35,25 +35,18 @@ public class ProperyTaxPaymentController {
 
     }
 
-    /**
-     * this method save the record in database
-     */
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Optional<PropertyTaxPayment> getTaxPayById(@PathVariable Integer id) {
         return taxpayrepo.findById(id);
     }
 
-    /**
-     * update the record of database
-     */
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    
+    @RequestMapping(value = "/save", method = RequestMethod.POST, consumes="application/json;charset=UTF-8")
     public PropertyTaxPayment saveTaxPay(@RequestBody PropertyTaxPayment taxpay) {
         return taxpayrepo.save(taxpay);
     }
 
-    /**
-     * delete the record according to id
-     */
+   
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
     public PropertyTaxPayment updateTaxPay(@RequestBody PropertyTaxPayment taxpay) {
         return taxpayrepo.save(taxpay);
